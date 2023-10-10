@@ -13,6 +13,9 @@ class UsersService {
 
     return result
   }
+  async checkUserExist(email: string) {
+    return Boolean(await databaseService.users.findOne({ email }))
+  }
   constructor() {}
 }
 
