@@ -19,13 +19,10 @@ export const loginController = (req: Request, res: Response) => {
 
 export const registerController = async (req: Request<ParamsDictionary, any, RegisterReqBody>, res: Response) => {
   //const { email, password } = req.body
-  try {
-    const result = await userService.register(req.body)
-    return res.json({
-      message: 'Register success',
-      result
-    })
-  } catch (error) {
-    console.log(error)
-  }
+  //throw new Error('loi roi')
+  const result = await userService.register(req.body)
+  return res.json({
+    message: 'Register success',
+    result
+  })
 }
